@@ -76,3 +76,12 @@ def cache_result(cache_key = None,cache_kwarg_keys = None,seconds = 900,cache_fi
             return result
         return x
     return set_cache
+    
+    def get_nested_ordered_dict(input_dict):
+        res = OrderedDict()
+        for k, v in sorted(input_dict.items()):
+            if isinstance(v, dict):
+                res[k] = get_nested_ordered_dict(v)
+            else:
+                res[k] = v
+        return res
