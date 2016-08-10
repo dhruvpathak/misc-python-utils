@@ -31,11 +31,13 @@ def nested_path_get(obj, path_str, strict=True, mode='GET', default_return_value
     Examples:
         >>> obj = { 'success':True,'data':{ 'rank':'student','age':20 }}
         >>> nested_path_get(obj,'data.rank')
-        'student'
+            student
         >>> nested_path_get(obj,'data.profession', strict=False)
         # Returns None
-        >>> nested_path_get(obj,'data.profession', strict=True)
+        >>> nested_path_get(obj,'data.profession', strict=True )
         # raises exception
+        >>> nested_path_get(obj,'data.profession', strict=False, default_return_value='doctor' )
+            doctor
 
     """
     nested_keys = path_str.split(".")

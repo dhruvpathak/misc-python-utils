@@ -16,8 +16,6 @@ logger = logging.getLogger("common")
 
 
 
-
-
 def url_fetch(url, params={}, config={}):
     """A utility to fetch data from a url
 
@@ -170,12 +168,11 @@ def process_str_for_similarity_cmp(input_str, normalized=False, ignore_list=[]):
 
 
 
+
 def record_time(f):
     """ Records and logs the time taken by a function
-
     Args:
         f (method) : method for which ,time has to be logged
-
 
     Returns:
        time: returns time taken by a function
